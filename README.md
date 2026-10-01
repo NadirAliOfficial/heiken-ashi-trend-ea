@@ -48,6 +48,31 @@ On chart panel showing: EA status, current signal direction, open trade and
 lot size, floating P/L, daily P/L in currency and %, daily starting capital,
 current spread, configured trading window, and the daily profit/loss limits.
 
+## Installation
+
+1. Copy `HeikenAshiTrendEA.mq5` to `MQL5/Experts/` (MetaTrader 5: File -> Open Data Folder).
+2. Open it in MetaEditor and compile (F7).
+3. Attach the EA to any chart and enable Algo Trading.
+
+## Inputs
+
+| Input | Default | Description |
+|---|---|---|
+| `HA_Timeframe` | M15 | Heiken Ashi timeframe |
+| `HA_LookbackBars` | 300 | Bars used to build the HA series |
+| `LotSize` | 0.10 | Fixed lot size |
+| `UseStopLoss` / `StopLossPoints` | true / 500 | Stop Loss on/off and distance in points |
+| `UseTakeProfit` / `TakeProfitPoints` | true / 1000 | Take Profit on/off and distance in points |
+| `MaxSlippagePoints` | 30 | Max slippage in points |
+| `UseSpreadFilter` / `MaxSpreadPoints` | true / 300 | Max spread filter on/off and limit in points |
+| `MagicNumber` | 88123400 | Magic number identifying EA positions |
+| `StartTime` / `StopTime` | 00:00 / 23:59 | Trading window, `HH:MM` server time |
+| `UseDailyProfitLimit` / `DailyProfitPercent` | true / 3.0 | Daily profit target, % of daily start capital |
+| `UseDailyLossLimit` / `DailyLossPercent` | true / 2.0 | Daily loss limit, % of daily start capital |
+| `UseEquityForDaily` | true | Use equity (true) or balance (false) as daily start capital |
+| `ShowDashboard` | true | Show the on chart dashboard |
+| `DashboardX` / `DashboardY` | 15 / 20 | Dashboard offset in pixels |
+
 ## Files
 
 - `HeikenAshiTrendEA.mq5` — full EA source
